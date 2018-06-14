@@ -22,12 +22,6 @@ pipeline {
 //    env.REGISTRY_URL = "https://10.130.2.201:8080"
 //    env.REGISTRY_CREDENTIALS = "nexus-qa"
 //    env.IMAGE_NAME = "ucdbgdemo"
-//    showEnvironmentVariables()
-//}
-//
-//def showEnvironmentVariables() {
-//    sh 'env | sort > env.txt'
-//    sh 'cat env.txt'
 //}
 
 def buildAndRegisterDockerImage() {
