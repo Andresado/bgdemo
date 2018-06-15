@@ -35,7 +35,7 @@ def buildAndRegisterDockerImage() {
 //      echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
         echo "Register image at registry"
         buildResult.push()
-//      echo "Disconnect from registry at ${env.REGISTRY_URL}"
+//      echo "Disconnect from registry"
 //      sh "docker logout ${env.REGISTRY_URL}"
     }
 }
