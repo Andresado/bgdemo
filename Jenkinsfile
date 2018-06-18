@@ -15,7 +15,7 @@ pipeline {
 }
 
 def initialize() {
-    env.REGISTRY_URL = "https://10.130.2.201:8080"
+    env.REGISTRY_URL = "http://10.130.2.201:8081"
     env.REGISTRY_CREDENTIALS = "nexus-qa"
     env.IMAGE_NAME = "bgdemo"
 }
