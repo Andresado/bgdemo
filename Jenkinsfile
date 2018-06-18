@@ -24,7 +24,8 @@ def buildAndRegisterDockerImage() {
     def buildResult
     docker.withRegistry(env.REGISTRY_URL, env.REGISTRY_CREDENTIALS) {
         echo "Build ${env.IMAGE_NAME}"
-        buildResult = docker.build(env.IMAGE_NAME:env.BUILD_ID)
+        buildResult = docker.build(env.IMAGE_NAME)
+//      buildResult = docker.build(env.IMAGE_NAME:env.BUILD_ID)
         echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
         buildResult.push()
         echo "Disconnect from registry"
