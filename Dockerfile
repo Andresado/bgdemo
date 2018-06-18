@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM 10.130.2.201:8080/python:2.7-slim
+FROM 10.130.2.201:8081/python:2.7-slim
 
 # Set the working directory to /app
 WORKDIR /app
