@@ -15,8 +15,8 @@ pipeline {
 }
 
 def initialize() {
-    env.REGISTRY_URL = ""
-    env.REGISTRY_CREDENTIALS = ""
+    env.REGISTRY_URL = "https://registry-1.docker.io"
+    env.REGISTRY_CREDENTIALS = "andresado1383"
     env.IMAGE_NAME = "bgdemo"
 }
 
