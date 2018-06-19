@@ -23,7 +23,7 @@ def initialize() {
 def buildAndRegisterDockerImage() {
     echo "Ingreso"
     def buildResult
-    docker.withRegistry(env.REGISTRY_URL, env.REGISTRY_CREDENTIALS) {
+    docker.withRegistry(env.REGISTRY_URL) {
         echo "Build ${env.IMAGE_NAME}"
         buildResult = docker.build(env.IMAGE_NAME)
 //      buildResult = docker.build(env.IMAGE_NAME:env.BUILD_ID)
