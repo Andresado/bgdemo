@@ -22,7 +22,7 @@ def initialize() {
 
 def buildAndRegisterDockerImage() {
     def buildResult
-    docker.withRegistry("${env.REGISTRY_URL}") {
+    docker.withRegistry("${env.REGISTRY_URL}","${env.REGISTRY_CREDENTIALS}") {
         echo "Building ${env.IMAGE_NAME}"
         buildResult = docker.build("${env.IMAGE_NAME}:${env.BUILD_ID}")
         echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
