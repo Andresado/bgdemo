@@ -16,7 +16,7 @@ pipeline {
 
 def initialize() {
     env.REGISTRY_URL = "http://localhost:32769/"
-    env.REGISTRY_CREDENTIALS = "andresado1383"
+    env.REGISTRY_CREDENTIALS = ""
     env.IMAGE_NAME = "bgdemo"
 }
 
