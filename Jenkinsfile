@@ -16,6 +16,7 @@ pipeline {
         }
         
         stage("EntregaUCD") {
+	 agent any	
          steps { 
 
             step([$class: 'UCDeployPublisher',
