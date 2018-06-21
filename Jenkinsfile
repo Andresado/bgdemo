@@ -19,7 +19,7 @@ pipeline {
          steps { 
 
             step([$class: 'UCDeployPublisher',
-        siteName: 'https://192.168.43.17:8443',
+        siteName: 'local',
         component: [
             $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
             componentName: 'bgdemoWebpage',
