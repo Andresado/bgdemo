@@ -44,6 +44,7 @@ pipeline {
         }
     }
 	}
+}
 def initialize() {
     env.REGISTRY_URL = "http://localhost:5000"
     env.REGISTRY_CREDENTIALS = "registry"
@@ -61,4 +62,3 @@ def buildAndRegisterDockerImage() {
         sh "docker logout ${env.REGISTRY_URL}"
     }
 }
-	}
