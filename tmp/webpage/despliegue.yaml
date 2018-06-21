@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: bgdemo
-        image: andresado1383/ucdbgdemo:v1
+        image: localhost:5000/bgdemo:${p?:Version}
         resources:
           requests:
             cpu: 100m
