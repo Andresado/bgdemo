@@ -32,8 +32,8 @@ pipeline {
             delivery: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
                 pushVersion: '${BUILD_NUMBER}',
-                baseDir: 'jobs/Demo_Fidelizacion/tmp/webpage',
-                fileIncludePatterns: '*',
+                baseDir: '/tmp/webpage',
+                fileIncludePatterns: '**/*',
                 fileExcludePatterns: '',
                 pushProperties: 'pushProperties',
                 pushDescription: 'Pushed_app_kuber'
