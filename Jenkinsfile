@@ -35,7 +35,6 @@ pipeline {
                 baseDir: "${workspace}/tmp/webpage",
                 fileIncludePatterns: '**/*',
                 fileExcludePatterns: '',
-                pushDescription: 'Pushed_app_kuber'
             ]
         ]
     ])
