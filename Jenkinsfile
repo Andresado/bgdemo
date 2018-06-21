@@ -53,5 +53,3 @@ def buildAndRegisterDockerImage() {
         sh "docker logout ${env.REGISTRY_URL}"
     }
 }
-
-}
