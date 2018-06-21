@@ -32,7 +32,7 @@ pipeline {
             delivery: [
                 $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
                 pushVersion: '${BUILD_NUMBER}',
-                baseDir: 'tmp/webpage',
+                baseDir: '/var/lib/jenkins/workspace/Demo_Fidelizacion',
                 fileIncludePatterns: '**/*',
                 fileExcludePatterns: '',
                 pushProperties: 'pushProperties',
