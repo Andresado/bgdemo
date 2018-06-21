@@ -1,7 +1,3 @@
-
-
-
-
 #!groovy
 
 pipeline {
