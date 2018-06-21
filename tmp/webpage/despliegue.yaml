@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: bgdemo
-        image: localhost:5000/bgdemo:latest
+        image: 192.168.1.64:5000/bgdemo:latest
         resources:
           requests:
             cpu: 100m
