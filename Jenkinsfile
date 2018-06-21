@@ -14,6 +14,34 @@ pipeline {
             agent any
             steps { buildAndRegisterDockerImage() }
         }
+        
+        stage("EntregaUCD") {
+         steps { 
+
+            step([$class: 'UCDeployPublisher',
+        siteName: 'local',
+        component: [
+            $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
+            componentName: 'bgdemoWebpage',
+            createComponent: [
+                $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
+                componentTemplate: 'Kubernetes',
+                componentApplication: 'Blue-Green Demo'
+            ],
+            delivery: [
+                $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
+                pushVersion: '${BUILD_NUMBER}',
+                baseDir: 'jobs\\Demo_Fidelizacion\\tmp',
+                fileIncludePatterns: '*',
+                fileExcludePatterns: '',
+                pushProperties: 'pushProperties',
+                pushDescription: 'Pushed_app_kuber'
+            ]
+        ]
+    ])
+        
+        
+        }
     }
 }
 
