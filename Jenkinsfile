@@ -35,7 +35,7 @@ pipeline {
                 baseDir: "${workspace}/tmp/webpage",
                 fileIncludePatterns: '**/*',
                 fileExcludePatterns: '',
-				pushProperties: "version=${env.BUILD_ID}",
+				pushProperties: "Ver_imagen=${env.BUILD_ID}",
             ]
         ]
     ])
