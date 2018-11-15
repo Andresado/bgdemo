@@ -14,36 +14,7 @@ pipeline {
             agent any
             steps { buildAndRegisterDockerImage() }
         }
-        
-        stage("EntregaUCD") {
-	 agent any	
-         steps { 
-
-            step([$class: 'UCDeployPublisher',
-        siteName: 'local',
-        component: [
-            $class: 'com.urbancode.jenkins.plugins.ucdeploy.VersionHelper$VersionBlock',
-            componentName: 'bgdemoWebpage',
-            createComponent: [
-                $class: 'com.urbancode.jenkins.plugins.ucdeploy.ComponentHelper$CreateComponentBlock',
-                componentTemplate: 'Kubernetes',
-                componentApplication: 'Blue-Green Demo'
-            ],
-            delivery: [
-                $class: 'com.urbancode.jenkins.plugins.ucdeploy.DeliveryHelper$Push',
-                pushVersion: '${BUILD_NUMBER}',
-                baseDir: "${workspace}/tmp/webpage",
-                fileIncludePatterns: '**/*',
-                fileExcludePatterns: '',
-				pushProperties: "Ver_imagen=${env.BUILD_ID}",
-            ]
-        ]
-    ])
-        
-        
-        }
-    }
-	}
+  	}
 }
 def initialize() {
     env.REGISTRY_URL = "http://169.62.240.152:8083"
