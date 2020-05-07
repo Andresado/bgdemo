@@ -17,9 +17,10 @@ pipeline {
   	}
 }
 def initialize() {
-    env.REGISTRY_URL = "http://169.62.240.152:8083"
-    env.REGISTRY_CREDENTIALS = "registry"
-    env.IMAGE_NAME = "bgdemo"
+    env.REGISTRY_URL = params["REGISTRY_URL"]
+    env.REGISTRY_URL_IP = "REGISTRY_URL_IP"
+    env.REGISTRY_CREDENTIALS = params["REGISTRY_CREDENTIALS"]
+    env.IMAGE_NAME = params["IMAGE_NAME"]
 }
 
 def buildAndRegisterDockerImage() {
