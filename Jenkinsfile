@@ -5,6 +5,21 @@ pipeline {
     options {
         timeout(time: 10, unit: 'MINUTES')
     }
+    
+        parameters {
+        string( name: 'USER', defaultValue: '', description: 'Correo electronico')
+        string( name: 'IMAGE_NAME', defaultValue: 'bgdemo', description: 'Identificador Servicio')
+		string( name: 'IMAGE_NUMBER', defaultValue: '1', description: 'Identificador Imagen')
+    }
+
+    environment {
+        REGISTRY_URL = "${REGISTRY_URL}"
+        REGISTRY_URL_IP = "${REGISTRY_URL_IP}"
+        REGISTRY_CREDENTIALS = "${REGISTRY_CREDENTIALS}"
+	    IMAGE_NAME = "${IMAGE_NAME}"
+		IMAGE_NUMBER = "${IMAGE_NUMBER}"		
+    }
+    
     stages {
       stage("Init") {
           agent any
