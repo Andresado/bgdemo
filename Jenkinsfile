@@ -43,8 +43,7 @@ def buildAndRegisterDockerImage() {
     docker.withRegistry("${env.REGISTRY_URL}","${env.REGISTRY_CREDENTIALS}") {
         echo "Building ${env.IMAGE_NAME}:${env.IMAGE_NUMBER}"
         buildResult = docker.build("${env.IMAGE_NAME}:${env.BUILD_ID}","--build-arg CODE_REGISTRY=wtemp.cem:8445 .")
-	buildResult = docker.deploy ("${env.IMAGE_NAME}:${env.BUILD_ID}","--build-arg CODE_REGISTRY=wtemp.cem:8445 .")
-        echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
+	echo "Register ${env.IMAGE_NAME} at ${env.REGISTRY_URL}"
         buildResult.push("${env.IMAGE_NUMBER}")
         echo "Disconnect from registry"
         sh "docker logout ${env.REGISTRY_URL}"
